@@ -37,14 +37,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
 
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: 'src/assets/images',
-    //       to: path.resolve(__dirname, 'dist/images')
-    //     }
-    //   ]
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images',
+          to: path.resolve(__dirname, 'dist/assets/images')
+        }
+      ]
+    }),
 
     // new ImageminWebpPlugin({
     //   config: [{
@@ -55,17 +55,17 @@ module.exports = {
     //   }]
     // }),
 
-    // new ImageminPlugin({
-    //   jpegtran: null,
-    //   gifsicle: null,
-    //   optipng: null,
+    new ImageminPlugin({
+      jpegtran: null,
+      gifsicle: null,
+      optipng: null,
 
-    //   plugins: [
-    //     imageminMozjpeg({
-    //       quality: 75,
-    //       progressive: true
-    //     })
-    //   ]
-    // })
+      // plugins: [
+      //   imageminMozjpeg({
+      //     quality: 75,
+      //     progressive: true
+      //   })
+      // ]
+    })
   ]
 }
