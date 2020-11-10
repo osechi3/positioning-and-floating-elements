@@ -40,6 +40,10 @@ html {
   background-color: #f5f5f5;
 }
 
+.header__search-btn_hidden {
+  display: none;
+}
+
 .header__section-link {
   color: black;
   font-weight: bold;
@@ -52,9 +56,13 @@ html {
   text-decoration: underline;
 }
 
+.header__section-link_hidden {
+  display: none;
+}
+
 .header__main-page-link {
   display: grid;
-  align-self: end;
+  align-self: center;
   justify-items: center;
 }
 
@@ -67,7 +75,8 @@ html {
 
   color: #fff;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
+  text-transform: uppercase;
 
   background-color: #567b95;
   border: 1px solid #3c5568;
@@ -79,4 +88,55 @@ html {
 
 .header__action-btn:hover {
   background-color: #4a6b82;
+}
+
+.header__account-btn {
+  padding: 8px 0;
+
+  font-size: 18px;
+}
+
+.header__account-btn_hidden {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .header__nav-bar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .header__main-page-img {
+    max-width: 210px;
+  }
+
+  .header__action-btn {
+    position: absolute;
+    top: 55px;
+    right: 52px;
+
+    margin: 0 15px;
+    padding: 0;
+
+    color: #567b95;
+    font-weight: normal;
+    font-size: 10px;
+
+    background: none;
+    border: none;
+  }
+
+  .header__login-btn {
+    right: 0;
+
+    padding-left: 5px;
+
+    border-left: 1px solid gray;
+    border-radius: 0;
+  }
+
+  .header__action-btn:hover {
+    color: #3c5568;
+
+    background: none;
+  }
 }
