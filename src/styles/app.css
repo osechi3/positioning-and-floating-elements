@@ -102,6 +102,8 @@ html {
 
 @media (max-width: 1000px) {
   .header__nav-bar {
+    position: relative;
+
     grid-template-columns: auto 1fr auto;
   }
 
