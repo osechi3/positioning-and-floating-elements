@@ -9,17 +9,22 @@ html {
 }
 
 /* PAGE'S HEADER */
-.header__nav-bar {
+.header {
   position: fixed;
+  top: 0;
 
+  width: 100%;
+}
+
+.header__nav-bar {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: auto auto auto 1fr auto auto;
   align-items: center;
-  width: 100%;
 
   padding: 5px 15px;
 
+  background-color: #fff;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -101,9 +106,11 @@ html {
 }
 
 @media (max-width: 1000px) {
-  .header__nav-bar {
+  .header {
     position: relative;
+  }
 
+  .header__nav-bar {
     grid-template-columns: auto 1fr auto;
   }
 
