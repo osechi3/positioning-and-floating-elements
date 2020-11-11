@@ -57,8 +57,9 @@ module.exports = {
     // new ImageminWebpPlugin({
     //   config: [{
     //     test: /\.(jpe?g|png)/,
+    //     exclude: 'main-picture.jpg',
     //     options: {
-    //       quality: 60
+    //       quality: 80
     //     }
     //   }]
     // }),
