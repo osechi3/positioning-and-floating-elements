@@ -9,6 +9,7 @@
         **** Action Buttons
     ** Main Content
       *** Subscribe Plug
+      *** Sidebar with articles
 */
 
 html {
@@ -305,6 +306,47 @@ main {
   background-color: #ccc;
 
   content: '';
+}
+
+/* Article -- Sidebar with articles */
+.articles-sidebar {
+  grid-column: sidebar-right-start;
+
+  max-width: 200px;
+}
+
+.articles-sidebar__header {
+  padding: 10px 0;
+
+  font-size: 12px;
+
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.articles-sidebar__article {
+  display: flex;
+  align-items: center;
+
+  margin: 5px 0;
+
+  font-size: 12px;
+}
+
+.articles-sidebar__image {
+  flex: none;
+
+  width: 75px;
+  margin-right: 10px;
+}
+
+.articles-sidebar__link {
+  color: #3d3d3d;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.articles-sidebar__link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1000px) {

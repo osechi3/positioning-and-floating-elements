@@ -54,27 +54,26 @@ module.exports = {
       ]
     }),
 
-    // new ImageminWebpPlugin({
-    //   config: [{
-    //     test: /\.(jpe?g|png)/,
-    //     exclude: 'main-picture.jpg',
-    //     options: {
-    //       quality: 80
-    //     }
-    //   }]
-    // }),
+    new ImageminWebpPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 80
+        }
+      }]
+    }),
 
     new ImageminPlugin({
       jpegtran: null,
       gifsicle: null,
       optipng: null,
 
-      // plugins: [
-      //   imageminMozjpeg({
-      //     quality: 75,
-      //     progressive: true
-      //   })
-      // ]
+      plugins: [
+        imageminMozjpeg({
+          quality: 75,
+          progressive: true
+        })
+      ]
     })
   ]
 }
