@@ -21,7 +21,7 @@ class Page {
   respond () {
     if (window.innerWidth > 1000) {
       this.respondToNormalWidth()
-    } else if (window.innerWidth <= 1000) {
+    } else if (window.innerWidth <= 1000 && window.innerWidth > 650) {
       this.respondTo1000px()
     }
   }

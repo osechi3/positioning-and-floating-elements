@@ -118,7 +118,7 @@ html {
 
 /* MAIN */
 main {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 /* ARTICLE */
@@ -132,10 +132,10 @@ main {
     [sidebar-right-end];
 }
 
+/* ARTICLE -- Header */
 .article__header {
   grid-column: content-start;
-
-  margin: 0;
+  justify-self: center;
 }
 
 .main-picture {
@@ -161,13 +161,77 @@ main {
 }
 
 .main-picture__author {
+  margin: 5px 0;
+
   color: #888;
   font-size: 12px;
   font-style: normal;
 }
 
+/* Article -- Author Info */
 .article__author-section {
+  display: grid;
+  grid-row-gap: 10px;
   grid-column: content-start;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+
+  font-size: 13px;
+}
+
+.article__link:hover {
+  text-decoration: none;
+}
+
+.article__author-text {
+  color: #333;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.article__author-link {
+  color: #333;
+  text-decoration-color: #ccc;
+}
+
+.article__date {
+  grid-row: 2;
+}
+
+/* Article -- Action Buttons */
+.article__actions-section {
+  grid-row: 2;
+  grid-column: -1;
+}
+
+.article__share-btn {
+  padding: 7px;
+
+  color: #000;
+  font-size: 14px;
+
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: 50%;
+}
+
+.article__share-btn:hover {
+  background-color: #fff;
+  border-color: #d6d6d6;
+  cursor: pointer;
+}
+
+.article__action-btn {
+  color: #858585;
+  font-size: 20px;
+
+  background: none;
+  border: none;
+}
+
+.article__action-btn:hover {
+  color: #ccc;
 }
 
 .article__main-content {
@@ -220,12 +284,45 @@ main {
   }
 
   /* ARTICLE */
+  .article {
+    grid-template-columns:
+      [sidebar-left-start] 1fr
+      [sidebar-left-end content-start] 4fr
+      [content-end sidebar-right-start] 1fr
+      [sidebar-right-end];
+  }
+
+  /* Article -- Header */
   .main-picture__main-img {
     max-width: 100%;
   }
 
   .main-picture__caption {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 750px) {
+  /* ARTICLE */
+  .article {
+    grid-template-columns:
+      [sidebar-left-start] 1fr
+      [sidebar-left-end content-start] 10fr
+      [content-end sidebar-right-start] 1fr
+      [sidebar-right-end];
+  }
+
+  /* Article -- Header */
+  .article__header-h1 {
+    grid-column: 1 / -1;
+
+    margin: 10px 0;
+
+    font-size: 25px;
+  }
+
+  .main-picture__caption {
+    font-size: 13px;
   }
 }
 
