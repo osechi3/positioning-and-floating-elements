@@ -127,7 +127,7 @@ main {
 /* ARTICLE */
 .article {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 15px;
   grid-template-columns:
     [sidebar-left-start] 1fr
     [sidebar-left-end content-start] 2fr
@@ -180,7 +180,9 @@ main {
   grid-template-columns: auto 1fr auto;
   align-items: end;
 
-  font-size: 13px;
+  margin: 10px 0 20px 0;
+
+  font-size: 14px;
 }
 
 .article__link {
@@ -208,6 +210,8 @@ main {
 
 .article__date {
   grid-row: 2;
+
+  font-size: 12px;
 }
 
 /* Article -- Action Buttons */
@@ -252,10 +256,11 @@ main {
 }
 
 /* Article -- Main Content */
-.article__main-content {
-  display: grid;
-  grid-gap: 20px;
+
+.article__text {
   grid-column: content-start;
+
+  margin: 0;
 
   color: #333;
   font-size: 18px;
@@ -263,15 +268,14 @@ main {
   text-align: justify;
 }
 
-.article__main-text {
-  margin: 0;
-}
-
 /* Article -- Subscribe Plug */
 .subscribe-plug {
   display: flex;
   flex-direction: column;
+  grid-column: content-start;
   justify-content: center;
+
+  margin: 10px 0;
 
   font-weight: bold;
   font-size: 13px;
@@ -288,7 +292,7 @@ main {
 
 .subscribe-plug__thanks-text::before {
   display: block;
-  width: 90px;
+  width: 70px;
   height: 1px;
   margin: 0 auto 15px auto;
 
@@ -299,7 +303,7 @@ main {
 
 .subscribe-plug__link::after {
   display: block;
-  width: 90px;
+  width: 70px;
   height: 1px;
   margin: 15px auto 0 auto;
 
@@ -310,7 +314,9 @@ main {
 
 /* Article -- Sidebar with articles */
 .articles-sidebar {
+  grid-row: span 2;
   grid-column: sidebar-right-start;
+  justify-self: center;
 
   max-width: 200px;
 }
