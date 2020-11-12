@@ -7,6 +7,7 @@
     ** Header
       *** Author Info
         **** Action Buttons
+    ** Main Content
 */
 
 html {
@@ -180,7 +181,15 @@ main {
   font-size: 13px;
 }
 
+.article__link {
+  color: #326891;
+}
+
 .article__link:hover {
+  text-decoration: none;
+}
+
+.article__link:focus {
   text-decoration: none;
 }
 
@@ -240,8 +249,20 @@ main {
   display: none;
 }
 
+/* Article -- Main Content */
 .article__main-content {
+  display: grid;
+  grid-gap: 20px;
   grid-column: content-start;
+
+  color: #333;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.article__main-text {
+  margin: 0;
 }
 
 @media (max-width: 1000px) {
@@ -329,6 +350,12 @@ main {
 
   .main-picture__caption {
     font-size: 13px;
+  }
+
+  /* Article -- Main Content */
+  .article__main-content {
+    font-size: 17px;
+    line-height: 1.5;
   }
 }
 
