@@ -236,6 +236,10 @@ main {
   cursor: pointer;
 }
 
+.article__share-btn_hidden {
+  display: none;
+}
+
 .article__main-content {
   grid-column: content-start;
 }
