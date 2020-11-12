@@ -8,6 +8,7 @@
       *** Author Info
         **** Action Buttons
     ** Main Content
+      *** Subscribe Plug
 */
 
 html {
@@ -263,6 +264,47 @@ main {
 
 .article__main-text {
   margin: 0;
+}
+
+/* Article -- Subscribe Plug */
+.subscribe-plug {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+}
+
+.subscribe-plug__thanks-text {
+  margin: 0;
+}
+
+.subscribe-plug__link {
+  text-decoration: none;
+}
+
+.subscribe-plug__thanks-text::before {
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 0 auto 15px auto;
+
+  background-color: #ccc;
+
+  content: '';
+}
+
+.subscribe-plug__link::after {
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 15px auto 0 auto;
+
+  background-color: #ccc;
+
+  content: '';
 }
 
 @media (max-width: 1000px) {
