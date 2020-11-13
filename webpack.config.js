@@ -56,7 +56,7 @@ module.exports = {
 
     new ImageminWebpPlugin({
       config: [{
-        test: /\.(jpe?g|png)/,
+        test: /\.(jpe?g)/,
         options: {
           quality: 80
         }
@@ -66,7 +66,7 @@ module.exports = {
     new ImageminPlugin({
       jpegtran: null,
       gifsicle: null,
-      optipng: null,
+      // optipng: null,
 
       plugins: [
         imageminMozjpeg({
