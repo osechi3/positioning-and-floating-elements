@@ -12,6 +12,7 @@
       *** Sidebar with articles
       *** Inflation Grid
       *** Youtube Video
+      *** Picture
 */
 
 html {
@@ -159,7 +160,8 @@ main {
 
 .article__caption {
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .main-picture__caption {
@@ -456,7 +458,6 @@ main {
 }
 
 /* Article -- Youtube Video */
-
 .youtube-video {
   grid-column: content-start;
   height: 400px;
@@ -472,6 +473,21 @@ main {
 .youtube-video__caption {
   position: relative;
 
+  margin: 5px 0;
+}
+
+/* Article -- Picture */
+.picture {
+  grid-column: content-start;
+
+  margin: 20px 0;
+}
+
+.picture__img {
+  width: 100%;
+}
+
+.picture__caption {
   margin: 7px 0;
 }
 
@@ -582,7 +598,7 @@ main {
   }
 
   .article__caption {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   /* Article -- Main Content */
@@ -599,7 +615,14 @@ main {
   .youtube-video {
     grid-column: 1 / -1;
 
-    margin: 30px 20px;
+    margin: 30px 20px 75px 20px;
+  }
+
+  /* Article -- Picture */
+  .picture {
+    grid-column: 1 / -1;
+
+    margin: 20px;
   }
 }
 
