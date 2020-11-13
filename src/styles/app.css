@@ -138,7 +138,6 @@ main {
 /* ARTICLE -- Header */
 .article__header {
   grid-column: content-start;
-  justify-self: center;
 }
 
 .main-picture {
@@ -256,6 +255,12 @@ main {
 }
 
 /* Article -- Main Content */
+
+.article__header-h2 {
+  margin: 8px 0 5px 0;
+
+  font-size: 18px;
+}
 
 .article__text {
   grid-column: content-start;
@@ -474,6 +479,10 @@ main {
   }
 
   /* Article -- Main Content */
+  .article__header-h2 {
+    font-size: 17px;
+  }
+
   .article__text {
     font-size: 17px;
     line-height: 1.5;
