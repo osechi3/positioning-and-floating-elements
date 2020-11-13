@@ -12,6 +12,7 @@ class Page {
     this.shareBtn = document.querySelector('.article__share-btn')
     this.articlesSidebar = document.querySelector('.articles-sidebar')
     this.sidebarImages = document.querySelectorAll('.articles-sidebar__image')
+    this.youtubeVideoContainer = document.querySelector('.youtube-video')
 
     this.respond()
     this.initListeners()
@@ -25,14 +26,17 @@ class Page {
     console.log(window.innerWidth)
     if (window.innerWidth > 1000) {
       this.respondToNormalWidth()
+      this.adjustVideoHeight(0.27)
 
       if (window.innerWidth <= 1150) {
         this.respondTo1150px()
       }
-    } else if (window.innerWidth <= 1000 && window.innerWidth > 650) {
+    } else if (window.innerWidth <= 1000 && window.innerWidth > 750) {
       this.respondTo1000px()
-    } else if (window.innerWidth <= 650) {
-      this.respondTo650px()
+      this.adjustVideoHeight(0.37)
+    } else if (window.innerWidth <= 750) {
+      this.respondTo750px()
+      this.adjustVideoHeight(0.5)
     }
   }
 
@@ -63,9 +67,13 @@ class Page {
     this.shareBtn.classList.remove('article__share-btn_hidden')
   }
 
-  respondTo650px () {
+  respondTo750px () {
     this.shareBtn.classList.add('article__share-btn_hidden')
     this.articlesSidebar.classList.add('articles-sidebar_hidden')
+  }
+
+  adjustVideoHeight (value) {
+    this.youtubeVideoContainer.style.height = window.innerWidth * value + 'px'
   }
 }
 
