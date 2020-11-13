@@ -381,7 +381,7 @@ main {
   grid-column: 1 / -1;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
-  margin: 15px 100px;
+  margin: 15px 100px 30px 100px;
 }
 
 .inflation-grid__title {
