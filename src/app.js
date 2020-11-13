@@ -65,6 +65,7 @@ class Page {
 
   respondTo650px () {
     this.shareBtn.classList.add('article__share-btn_hidden')
+    this.articlesSidebar.classList.add('articles-sidebar_hidden')
   }
 }
 

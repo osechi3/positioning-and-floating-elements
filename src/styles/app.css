@@ -474,7 +474,7 @@ main {
   }
 
   /* Article -- Main Content */
-  .article__main-content {
+  .article__text {
     font-size: 17px;
     line-height: 1.5;
   }
