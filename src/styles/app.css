@@ -11,6 +11,7 @@
       *** Subscribe Plug
       *** Sidebar with articles
       *** Inflation Grid
+      *** Recommended Articles
       *** Youtube Video
       *** Picture
   * Media Query 1150px
@@ -458,6 +459,66 @@ main {
   background-color: #000;
 
   content: '';
+}
+
+/* Article -- Recommended Articles */
+.recommended-articles {
+  grid-column: content-start;
+
+  overflow-x: hidden;
+
+  border-top: 1px solid #e0e0e0;
+}
+
+.recommended-articles__articles-section {
+  display: flex;
+  align-items: center;
+
+  overflow-x: scroll;
+}
+
+.recommended-articles_hidden {
+  display: none;
+}
+
+.recommended-articles__header {
+  width: 100%;
+  margin: 10px 0;
+
+  color: #888;
+  font-size: 14px;
+}
+
+.recommended-articles__article {
+  flex: 0 1 460px;
+  min-width: 220px;
+  margin: 0 10px 10px 10px;
+  padding-bottom: 15px;
+
+  border-right: 1px solid #e0e0e0;
+}
+
+.recommended-articles__link {
+  color: #141414;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.recommended-articles__article:first-child {
+  margin-left: 0;
+}
+
+.recommended-articles__article:last-child {
+  border-right: none;
+}
+
+.recommended-articles__title {
+  margin: 6px 0;
+}
+
+.recommended-articles__time {
+  color: #999;
+  font-size: 11px;
 }
 
 /* Article -- Youtube Video */
