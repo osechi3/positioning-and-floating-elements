@@ -3,18 +3,21 @@
 /*
   * PAGE'S HEADER
   * MAIN
-  * ARTICLE
-    ** Header
-      *** Author Info
-        **** Action Buttons
-    ** Main Content
-      *** Subscribe Plug
-      *** Sidebar with articles
-      *** Inflation Grid
-      *** Recommended Articles
-      *** Youtube Video
-      *** Picture
-    ** Footer
+    ** ARTICLE
+      *** Header
+        **** Author Info
+          ***** Action Buttons
+      *** Main Content
+        **** Subscribe Plug
+        **** Sidebar with articles
+        **** Inflation Grid
+        **** Recommended Articles
+        **** Youtube Video
+        **** Picture
+      *** Footer
+    ** OTHER ARTICLES
+      *** Suggested Newsletters
+      *** Popular Articles
   * Media Query 1150px
   * Media Query 1000px
   * Media Query 750px
@@ -34,6 +37,7 @@ html {
 .header {
   position: fixed;
   top: 0;
+  z-index: 1;
 
   width: 100%;
 }
@@ -597,6 +601,120 @@ main {
   margin-left: auto;
 }
 
+/* OTHER ARTICLES */
+.other-articles {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 3fr 1fr;
+  margin: 70px 30px;
+}
+
+/* OTHER ARTICLES -- Suggested Newsletters */
+.suggested-newsletters {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #000;
+}
+
+.suggested-newsletters__header {
+  grid-column: span 2;
+
+  color: #222;
+  font-size: 14px;
+}
+
+.suggested-newsletters__show-btn {
+  align-self: center;
+  justify-self: end;
+
+  padding: 3px;
+
+  color: #666;
+  font-size: 13px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.suggested-newsletters__newsletter {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+
+  border: 1px solid #e0e0e0;
+}
+
+.suggested-newsletters__newsletter-img {
+  min-width: 82px;
+  margin-right: 15px;
+}
+
+.suggested-newsletters__add-btn {
+  position: absolute;
+  right: 15px;
+
+  padding: 3px 6px;
+
+  color: #000;
+  font-size: 23px;
+
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+
+.suggested-newsletters__add-btn:hover {
+  color: #fff;
+
+  background-color: #000;
+  border: 2px solid #000;
+}
+
+.suggested-newsletters__newsletter-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.suggested-newsletters__subtitle {
+  margin: 12px 0 5px 0;
+
+  font-size: 11px;
+}
+
+.suggested-newsletters__title {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.suggested-newsletters__description {
+  margin: 8px 0;
+
+  color: #333;
+  font-size: 15px;
+}
+
+.suggested-newsletters__latest-link {
+  margin-top: auto;
+
+  color: #326891;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* OTHER ARTICLES -- Popular Articles */
+.popular-articles {
+  border-top: 1px solid #000;
+}
+
 @media (max-width: 1150px) {
   /* Article -- Sidebar with articles */
   .articles-sidebar {
@@ -612,6 +730,18 @@ main {
 
   .articles-sidebar__link {
     font-weight: bold;
+  }
+
+  /* OTHER ARTICLES -- Suggested Newsletters */
+  .suggested-newsletters__newsletter {
+    flex-direction: row;
+    grid-column: 1 / -1;
+  }
+
+  .suggested-newsletters__show-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    order: 1;
   }
 }
 
@@ -729,6 +859,18 @@ main {
     grid-column: 1 / -1;
 
     margin: 20px;
+  }
+
+  /* OTHER ARTICLES -- Suggested Newsletters */
+  .suggested-newsletters {
+    grid-column: 1 / -1;
+
+    border-width: 2px;
+  }
+
+  /* OTHER ARTICLES -- Popular Articles */
+  .popular-articles {
+    display: none;
   }
 }
 
