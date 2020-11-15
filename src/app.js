@@ -15,12 +15,21 @@ class Page {
     this.recommendedArticlesBar = document.querySelector('.recommended-articles')
     this.youtubeVideoContainer = document.querySelector('.youtube-video')
 
+    this.suggestedNewsletters =
+      document.querySelectorAll('.suggested-newsletters__newsletter')
+
     this.respond()
     this.initListeners()
   }
 
   initListeners () {
     window.addEventListener('resize', this.respond.bind(this))
+
+    this.suggestedNewsletters.forEach(newsletter => {
+      newsletter.addEventListener('mouseover', this.hoverButton)
+      newsletter.addEventListener('mouseleave', this.leaveButton)
+      newsletter.addEventListener('click', this.addNewsletter)
+    })
   }
 
   respond () {
@@ -79,6 +88,29 @@ class Page {
 
   adjustVideoHeight (value) {
     this.youtubeVideoContainer.style.height = window.innerWidth * value + 'px'
+  }
+
+  addNewsletter (event) {
+    const addBtn =
+      event.currentTarget.querySelector('.suggested-newsletters__add-btn')
+    const link =
+      event.currentTarget.querySelector('.suggested-newsletters__latest-link')
+
+    if (event.target !== link) {
+      addBtn.click()
+    }
+  }
+
+  hoverButton (event) {
+    const addBtn =
+      event.currentTarget.querySelector('.suggested-newsletters__add-btn')
+    addBtn.classList.add('suggested-newsletters__add-btn_hover')
+  }
+
+  leaveButton (event) {
+    const addBtn =
+      event.currentTarget.querySelector('.suggested-newsletters__add-btn')
+    addBtn.classList.remove('suggested-newsletters__add-btn_hover')
   }
 }
 
