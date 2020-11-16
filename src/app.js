@@ -42,7 +42,6 @@ class Page {
   }
 
   respond () {
-    console.log(window.innerWidth)
     if (window.innerWidth > 1000) {
       this.respondToNormalWidth()
       this.adjustVideoHeight(0.27)
