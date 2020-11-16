@@ -603,6 +603,7 @@ main {
 }
 
 .article__footer-share-btn {
+  max-height: 30px;
   margin-left: auto;
 }
 
