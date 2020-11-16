@@ -20,6 +20,7 @@
       *** Popular Articles
       *** Other Articles
     ** SITEMAP
+  * PAGE'S FOOTER
   * Media Query 1150px
   * Media Query 1000px
   * Media Query 750px
@@ -943,6 +944,46 @@ main {
 /* For accessibility reasons */
 .sitemap__page::before {
   content: '\200B';
+}
+
+/* PAGE'S FOOTER */
+.footer {
+  margin: 10px 30px 30px 30px;
+}
+
+.footer__copyright-text {
+  display: block;
+
+  text-align: center;
+}
+
+.footer__link-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer__list-item {
+  margin: 0 10px;
+}
+
+/* For accessibility reasons */
+.footer__list-item::before {
+  content: '\200B';
+}
+
+.footer__link {
+  color: #666;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
 }
 
 /* footer {
