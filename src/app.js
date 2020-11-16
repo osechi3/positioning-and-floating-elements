@@ -6,6 +6,12 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 
 class Page {
   constructor () {
+    this.initSelectors()
+    this.respond()
+    this.initListeners()
+  }
+
+  initSelectors () {
     this.searchBtn = document.querySelector('.header__search-btn')
     this.sectionLink = document.querySelector('.header__section-link')
     this.accountBtn = document.querySelector('.header__account-btn')
@@ -18,8 +24,8 @@ class Page {
     this.suggestedNewsletters =
       document.querySelectorAll('.suggested-newsletters__newsletter')
 
-    this.respond()
-    this.initListeners()
+    this.sitemapPagesContainers = document.querySelectorAll('.sitemap__pages')
+    this.sitemapPageHeaders = document.querySelectorAll('.sitemap__section-header')
   }
 
   initListeners () {
@@ -29,6 +35,10 @@ class Page {
       newsletter.addEventListener('mouseover', this.hoverButton)
       newsletter.addEventListener('mouseleave', this.leaveButton)
       newsletter.addEventListener('click', this.addNewsletter)
+    })
+
+    this.sitemapPageHeaders.forEach(header => {
+      header.addEventListener('click', this.toggleSitemapSection)
     })
   }
 
@@ -57,15 +67,29 @@ class Page {
     this.shareBtn.classList.remove('article__share-btn_hidden')
     this.sectionLink.classList.remove('header__section-link_hidden')
     this.searchBtn.classList.remove('header__search-btn_hidden')
+
     this.sidebarImages.forEach(image => {
       image.classList.remove('articles-sidebar__image_hidden')
     })
+
     this.articlesSidebar.classList.remove('articles-sidebar_hidden')
+
+    this.sitemapPagesContainers.forEach(container => {
+      container.classList.remove('sitemap__pages_hidden')
+    })
+
+    this.sitemapPageHeaders.forEach(header => {
+      header.classList.remove('sitemap__section-header_open')
+    })
   }
 
   respondTo1150px () {
     this.sidebarImages.forEach(image => {
       image.classList.add('articles-sidebar__image_hidden')
+    })
+
+    this.sitemapPagesContainers.forEach(container => {
+      container.classList.add('sitemap__pages_hidden')
     })
   }
 
@@ -77,6 +101,14 @@ class Page {
 
     this.accountBtn.classList.remove('header__account-btn_hidden')
     this.shareBtn.classList.remove('article__share-btn_hidden')
+
+    this.sitemapPagesContainers.forEach(container => {
+      container.classList.add('sitemap__pages_hidden')
+    })
+
+    this.sitemapPageHeaders.forEach(header => {
+      header.classList.remove('sitemap__section-header_open')
+    })
   }
 
   respondTo750px () {
@@ -84,6 +116,14 @@ class Page {
     this.articlesSidebar.classList.add('articles-sidebar_hidden')
 
     this.recommendedArticlesBar.classList.remove('recommended-articles_hidden')
+
+    this.sitemapPagesContainers.forEach(container => {
+      container.classList.add('sitemap__pages_hidden')
+    })
+
+    this.sitemapPageHeaders.forEach(header => {
+      header.classList.remove('sitemap__section-header_open')
+    })
   }
 
   adjustVideoHeight (value) {
@@ -111,6 +151,14 @@ class Page {
     const addBtn =
       event.currentTarget.querySelector('.suggested-newsletters__add-btn')
     addBtn.classList.remove('suggested-newsletters__add-btn_hover')
+  }
+
+  toggleSitemapSection (event) {
+    if (window.innerWidth < 1150) {
+      event.currentTarget.classList.toggle('sitemap__section-header_open')
+      const ul = event.currentTarget.parentElement.querySelector('.sitemap__pages')
+      ul.classList.toggle('sitemap__pages_hidden')
+    }
   }
 }
 
