@@ -112,7 +112,10 @@ class Page {
   respondTo750px () {
     this.shareBtn.classList.add('article__share-btn_hidden')
     this.articlesSidebar.classList.add('articles-sidebar_hidden')
+    this.sectionLink.classList.add('header__section-link_hidden')
+    this.searchBtn.classList.add('header__search-btn_hidden')
 
+    this.accountBtn.classList.remove('header__account-btn_hidden')
     this.recommendedArticlesBar.classList.remove('recommended-articles_hidden')
 
     this.sitemapPagesContainers.forEach(container => {

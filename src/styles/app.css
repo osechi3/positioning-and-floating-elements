@@ -1163,6 +1163,11 @@ main {
 }
 
 @media (max-width: 750px) {
+  /* PAGE'S HEADER */
+  .header__main-page-img {
+    max-width: 180px;
+  }
+
   /* ARTICLE */
   .article {
     grid-template-columns:
