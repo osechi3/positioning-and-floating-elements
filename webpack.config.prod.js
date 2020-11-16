@@ -20,7 +20,7 @@ module.exports = {
 
     /* name of the repo (if deploying to gh-pages) ('/repo-name/')
       or '/' (if deploying to firebase) */
-    publicPath: '/'
+    publicPath: '/positioning-and-floating-elements/'
   },
 
   devServer: {
@@ -59,16 +59,16 @@ module.exports = {
       patterns: [
         {
           from: 'src/assets/images',
-          to: path.resolve(__dirname, 'dist/images')
+          to: path.resolve(__dirname, 'dist/assets/images')
         }
       ]
     }),
 
     new ImageminWebpPlugin({
       config: [{
-        test: /\.(jpe?g|png)/,
+        test: /\.(jpe?g)/,
         options: {
-          quality: 60
+          quality: 80
         }
       }]
     }),
@@ -76,7 +76,6 @@ module.exports = {
     new ImageminPlugin({
       jpegtran: null,
       gifsicle: null,
-      optipng: null,
 
       plugins: [
         imageminMozjpeg({
