@@ -599,6 +599,7 @@ main {
 
 .article__comments-btn:hover {
   background-color: #4a6b82;
+  cursor: pointer;
 }
 
 .article__footer-share-btn {
